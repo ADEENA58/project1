@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+      body{
+        background-color:rgb(239, 198, 225);
+      }
+
+
+      .navbar {
+      background-color: rgb(249, 140, 194);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      overflow: hidden;
+      height: 100px;
+
+    }
+
+  
+    #burger {
+      width: 25px;
+      height: 3px;
+      margin: 5px;
+      display: none;
+    }
+    @media (max-width: 1139px) {
+      #burger {
+      display: block !important;
+    }
+    #nav-links {
+        display: none !important;
+      }
+    }
+    @media (max-width: 768px) {
+   
+
+      #burger {
+        display: block;
+      }
+
+      #nav-links {
+        display: block;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        /* background-color: ; */
+        padding: 10px;
+        border-radius: 5px;
+      }
+    }
+
+    .navbar-brand .navbar-text {
+      font-family: algerian;
+      letter-spacing: 5px;
+      font-size: 25px;
+      color: purple;
+
+    }
+
+#resp-nav{
+  display: none;
+}
+    .navbar a {
+      float: left;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 18px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+
+
+
+
+
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+
+    /* Dropdown button */
+    .dropdown .dropbtn {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+    }
+
+    Add a red background color to navbar links on hover */ .navbar a:hover,
+    .dropdown:hover .dropbtn {
+      background-color: purple;
+    }
+
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .navbar a:hover,
+    .dropdown:hover .dropbtn {
+      border-bottom: 5px solid purple;
+    }
+
+
+    /* The dropdown container */
+    .dropdown2 {
+      float: left;
+      overflow: hidden;
+    }
+
+    /* Dropdown button */
+    .dropdown2.dropbtn2 {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+
+      margin: 0;
+    }
+
+
+    .dropdown2-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+
+    .dropdown2-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+
+        .container {
+  width: 400px;
+  height: 300px;
+  background: linear-gradient(-45deg, #ab5699 0%, #df98b8 100%);
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 200px;
+  padding: 300px;
+  margin-top: 10px;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 32px 24px 24px;
+  gap: 16px;
+  text-align: center;
+}
+
+form .head {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+form .head span {
+  font-size: 40px;
+  font-weight: bolder;
+  color: black;
+}
+
+form .head p {
+  font-size: 1.1rem;
+  color: #100d0d;
+}
+
+form .inputs {
+  overflow: hidden;
+  background-color: #fff;
+  width: 100%;
+  margin: 1rem 0.5rem;
+  border-radius: 8px;
+  border-bottom: none;
+  outline: 0;
+}
+
+form .inputs input {
+  border: none;
+  outline: none;
+  padding: 8px 15px;
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.299);
+  font-weight: 200;
+}
+
+form button {
+  
+  font-size: 1.2rem;
+  padding: 1rem 2.5rem;
+  border: none;
+  outline: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: hotpink;
+  color: rgb(234, 234, 234);
+  font-weight: 700;
+  transition: 0.6s;
+  box-shadow: 0px 0px 60px #b0358b;
+  -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+}
+
+form button:active {
+  scale: 0.92;
+}
+
+form button:hover {
+  background: rgb(91, 32, 76);
+  background: linear-gradient(270deg, rgba(122, 13, 116, 0.681) 0%, rgba(247, 83, 159, 0.873) 60%);
+  color: rgb(103, 51, 86);
+}
+
+ 
+
+
+    </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a class="navbar-brand" href="#">
+      <span class="navbar-text text-success">Bright World</span>
+
+    </a>
+    <div class="navbar" id="nav-links">
+      <a href="copy.html">Home</a>
+
+      <div class="dropdown">
+        <button class="dropbtn"> Our Collection
+          <i class="fa fa-caret-down"></i>
+        </button>
+
+        <div class="dropdown-content">
+          <a href="CEILING.HTML">CEILING LIGHTS</a>
+          <a href="LAMP.HTML">LED LAMP</a>
+          <a href="light bulbb.html">LIGHT BULB</a>
+          <a href="walldecore.html">DECORATION LIGHTS</a>
+        </div>
+
+      </div>
+      <a href="about (1).html">About</a>
+      <a href="#Services">Our Services</a>
+
+      <div class="dropdown">
+        <button class="dropbtn"> Brands
+          <i class="fa fa-caret-down"></i>
+        </button>
+
+        <div class="dropdown-content">
+          <a href="phillips.html">phillips</a>
+          <a href="ultra.html">ultrasonic</a>
+
+        </div>
+
+      </div>
+      <a href="contact us form.html">Contact Us</a>
+      <a href="index.html">Feedback</a>
+      <a href="custtomer review.html">Review</a>
+
+
+  </nav>
+    <div class="body">
+        <div class="container">
+            <form>
+                <div class="head">
+                    <span>Contact Us</span>
+                    <p>Welcome to BrightWorld LED lightining store</p>
+                </div>
+                <div class="inputs">
+                    <input type="text" placeholder="Full Name">
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Password">
+                </div>
+                <button>submit</button>
+            </form>
+           
+    
+        </div>
+
+    </div>
+    
+</body>
+</html>

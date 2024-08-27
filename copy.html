@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bright World</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+      background-color: rgb(239, 198, 225);
+      font-family: open sans;
+    }
+
+    header {
+      background-color: rgb(168, 33, 157);
+      color: white;
+      padding: 30px;
+      text-align: center;
+      text-shadow: 10px;
+      font-size: 20px;
+font-family: algerian;
+    }
+
+    .navbar {
+      background-color: rgb(249, 140, 194);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      overflow: hidden;
+      height: 100px;
+
+    }
+
+  
+    #burger {
+      width: 25px;
+      height: 3px;
+      margin: 5px;
+      display: none;
+    }
+    @media (max-width: 1139px) {
+      #burger {
+      display: block !important;
+    }
+    #nav-links {
+        display: none !important;
+      }
+    }
+    @media (max-width: 768px) {
+   
+
+      #burger {
+        display: block;
+      }
+
+      #nav-links {
+        display: block;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        /* background-color: ; */
+        padding: 10px;
+        border-radius: 5px;
+      }
+    }
+
+    .navbar-brand .navbar-text {
+      font-family: algerian;
+      letter-spacing: 5px;
+      font-size: 25px;
+      color: purple;
+
+    }
+
+#resp-nav{
+  display: none;
+}
+    .navbar a {
+      float: left;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 18px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+
+
+
+
+
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+
+    /* Dropdown button */
+    .dropdown .dropbtn {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+    }
+
+    Add a red background color to navbar links on hover */ .navbar a:hover,
+    .dropdown:hover .dropbtn {
+      background-color: purple;
+    }
+
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .navbar a:hover,
+    .dropdown:hover .dropbtn {
+      border-bottom: 5px solid purple;
+    }
+
+
+    /* The dropdown container */
+    .dropdown2 {
+      float: left;
+      overflow: hidden;
+    }
+
+    /* Dropdown button */
+    .dropdown2.dropbtn2 {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+
+      margin: 0;
+    }
+
+
+    .dropdown2-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+
+    .dropdown2-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+
+
+
+
+
+
+    .carousel-slide {
+      display: flex;
+      justify-content: center;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 700px;
+    }
+
+    /* image container */
+
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .image1-container {
+      flex: 1;
+      width: 700px;
+      background-color: rgb(239, 198, 225);
+    }
+
+    .image1-container img {
+      width: 700px;
+      height: 400px;
+      display: block;
+    }
+
+    .image2-container {
+      flex: 1;
+      background-color: rgb(239, 198, 225);
+    }
+
+    .image2-container img {
+      width: 700px;
+      height: 400px;
+      display: block;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .flex-container {
+        flex-direction: column;
+      }
+    }
+
+
+
+    .animate-charcter {
+      text-transform: uppercase;
+      background-image: linear-gradient(-225deg,
+          purple 0%,
+          #44107a 29%,
+          #ff1361 67%,
+          pink 100%);
+      background-size: auto auto;
+      background-clip: border-box;
+      background-size: 200% auto;
+      color: #fff;
+      background-clip: text;
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textclip 2s linear infinite;
+      display: inline-block;
+      font-size: 90px;
+      text-align: center;
+      margin: 30px;
+    }
+
+    @media (max-width: 1024px) {
+      .animate-charcter {
+        font-size: 80px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .animate-charcter {
+        font-size: 60px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .animate-charcter {
+        font-size: 40px;
+      }
+    }
+
+    @keyframes textclip {
+      to {
+        background-position: 200% center;
+      }
+    }
+
+
+
+
+
+
+
+
+    /* .gallery */
+    .gallery {
+      display: grid;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      grid-gap: 20px;
+      grid-template-columns: repeat(4, 340px);
+      justify-items: center;
+      align-items: center;
+      margin: 40px;
+      padding-left: 150px;
+    }
+
+
+    .gallery-item {
+      box-sizing: border-box;
+    }
+
+    .gallery-item img {
+      width: 300px;
+      height: 250px;
+      display: block;
+      border-radius: 10px;
+      border-style: solid;
+      border-color: purple;
+    }
+
+    @media (max-width: 600px) {
+    .gallery {
+        gap: 5px;
+    }
+    
+    .gallery-item {
+        border-radius: 4px;
+    }
+    
+    .gallery-item img {
+        transition: transform 0.2s ease, filter 0.2s ease;
+    }
+}
+
+
+    /* .grid-container */
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: rgb(239, 198, 225);
+    }
+
+    .text-container {
+      padding: 20px;
+      background-color: #f1f1f1;
+      justify-content: center;
+      text-align: center;
+      line-height: 40px;
+      background-color: rgb(239, 198, 225);
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-size: 20px;
+    }
+
+    .text-container h1 {
+      text-align: center;
+      font-size: 40px;
+      margin: 30px;
+      color: purple;
+      
+
+    }
+
+    .image-container {
+      padding: 20px;
+      background-color: #f9f9f9;
+      background-color: rgb(239, 198, 225);
+    }
+
+    .image-container img {
+      width: 650px;
+      height: 500px;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+
+      }
+    }
+
+
+
+    /* gallery 2 */
+
+
+    .gallery2 {
+      display: grid;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      grid-gap: 20px;
+      grid-template-columns: repeat(4, 340px);
+      justify-items: center;
+      align-items: center;
+      margin: 40px;
+      padding-left: 150px;
+    }
+
+
+    .gallery2-item {
+      box-sizing: border-box;
+    }
+
+    .gallery2-item img {
+      width: 300px;
+      height: 250px;
+      display: block;
+      border-radius: 10px;
+      border-style: solid;
+      border-color: purple;
+    }
+
+
+    @media (max-width: 768px) {
+      .gallery2-item {
+        flex: 1 1 45%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery2-item {
+        flex: 1 1 100%;
+      }
+    }
+
+    .gallery2 img:hover {
+      transform: scale(1.1);
+
+    }
+
+
+
+
+
+    /* 
+flip container */
+
+    .flip-section {
+      padding: 20px;
+
+      background-color: rgb(239, 198, 225);
+    }
+
+    .flip-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      /* Space between boxes */
+      flex-wrap: wrap;
+    }
+
+
+    .flip-section h1 {
+      text-align: center;
+      text-shadow: 2px 2px 5px purple;
+      font-size: 60px;
+      margin: 30px;
+      font-family: 'Times New Roman', Times, serif;
+
+    }
+
+    .flip-box {
+      background: #f1f1f1;
+      width: calc(25% - 20px);
+      /* Adjust width to fit 4 boxes in one row with gap */
+      perspective: 1000px;
+      height: 400px;
+    }
+
+    .flip-box-inner {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      /* Adjust height as needed */
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-box img {
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+    }
+
+    .flip-box:hover .flip-box-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-box-front,
+    .flip-box-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    @media (max-width: 1200px) {
+      .flip-box {
+        width: calc(33.33% - 20px);
+        /* 3 boxes per row */
+      }
+    }
+
+    @media (max-width: 800px) {
+      .flip-box {
+        width: calc(50% - 20px);
+        /* 2 boxes per row */
+      }
+    }
+
+    @media (max-width: 500px) {
+      .flip-box {
+        width: 100%;
+        /* 1 box per row */
+      }
+    }
+
+    .flip-box-front {
+      background: #2980b9;
+      color: white;
+    }
+
+    .flip-box-back {
+      background: #e74c3c;
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+    /* video */
+
+    video {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      text-decoration: none;
+    }
+
+    footer {
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      background: rgb(168, 33, 157);
+      position: relative;
+
+    }
+
+    footer .content {
+      max-width: 1350px;
+      margin: auto;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      font-size: 15px;
+    }
+
+    footer .content p,
+    a {
+      color: #0b0b0b;
+    }
+
+    footer .content .box {
+      width: 33%;
+      transition: all 0.4s ease;
+    }
+
+    footer .content .topic {
+      font-size: 22px;
+      font-weight: 600;
+      color: black;
+      margin-bottom: 16px;
+
+    }
+
+    footer .content p {
+      text-align: justify;
+    }
+
+    footer .content .lower .topic {
+      margin: 24px 0 5px 0;
+    }
+
+    footer .content .lower i {
+      padding-right: 16px;
+    }
+
+    footer .content .middle {
+      padding-left: 80px;
+    }
+
+    footer .content .middle a {
+      line-height: 32px;
+    }
+
+    footer .content .right input[type="text"] {
+      height: 45px;
+      width: 100%;
+      outline: none;
+      color: #d9d9d9;
+      background: #000;
+      border-radius: 5px;
+      padding-left: 10px;
+      font-size: 17px;
+      border: 2px solid #222222;
+    }
+
+    footer .content .right input[type="submit"] {
+      height: 42px;
+      width: 100%;
+      font-size: 18px;
+      color: #d9d9d9;
+      background: #eb2f06;
+      outline: none;
+      border-radius: 5px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      margin-top: 12px;
+      border: 2px solid #eb2f06;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .content .right input[type="submit"]:hover {
+      background: none;
+      color: #eb2f06;
+    }
+
+    footer .content .media-icons a {
+      font-size: 16px;
+      height: 45px;
+      width: 45px;
+      display: inline-block;
+      text-align: center;
+      line-height: 43px;
+      border-radius: 5px;
+      border: 2px solid #222222;
+      margin: 30px 5px 0 0;
+      transition: all 0.3s ease;
+    }
+
+    .content .media-icons a:hover {
+      border-color: #91315e;
+    }
+
+    footer .bottom {
+      width: 100%;
+      text-align: right;
+      color: #0a0a0a;
+      padding: 0 40px 5px 0;
+    }
+
+    footer .bottom a {
+      color: #eb2f06;
+    }
+
+    footer a {
+      transition: all 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #eb2f06;
+    }
+
+    @media (max-width:1100px) {
+      footer .content .middle {
+        padding-left: 50px;
+      }
+    }
+
+    @media (max-width:950px) {
+      footer .content .box {
+        width: 50%;
+      }
+
+      .content .right {
+        margin-top: 40px;
+      }
+    }
+
+    @media (max-width:560px) {
+      footer {
+        position: relative;
+      }
+
+      footer .content .box {
+        width: 100%;
+        margin-top: 30px;
+      }
+
+      footer .content .middle {
+        padding-left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header> Our luxury LED lamps available </header>
+  <nav class="navbar">
+    <a class="navbar-brand" href="#">
+      <span class="navbar-text text-success">Bright World</span>
+
+    </a>
+    <div class="navbar" id="nav-links">
+      <a href="copy.html">Home</a>
+
+      <div class="dropdown">
+        <button class="dropbtn"> Our Collection
+          <i class="fa fa-caret-down"></i>
+        </button>
+
+        <div class="dropdown-content">
+          <a href="CEILING.HTML">CEILING LIGHTS</a>
+          <a href="LAMP.HTML">LED LAMP</a>
+          <a href="light bulbb.html">LIGHT BULB</a>
+          <a href="walldecore.html">DECORATION LIGHTS</a>
+        </div>
+
+      </div>
+      <a href="about (1).html">About</a>
+      <a href="#Services">Our Services</a>
+
+      <div class="dropdown">
+        <button class="dropbtn"> Brands
+          <i class="fa fa-caret-down"></i>
+        </button>
+
+        <div class="dropdown-content">
+          <a href="phillips.html">phillips</a>
+          <a href="ultra.html">ultrasonic</a>
+
+        </div>
+
+      </div>
+      <a href="contact us form.html">Contact Us</a>
+      <a href="index.html">Feedback</a>
+      <a href="custtomer review.html">Review</a>
+
+      
+      
+  </nav>
+  <div class="carousel-container">
+    <div class="carousel-slide">
+      <img src="slidder 2 (1).png" height="600">
+      <img src="slidder 6 (1).png" height="600">
+      <img src="slidder 4 (1).png" height="600">
+      <img src="luxury.jpg" height="600">
+      <img src="luxury 3.webp" height="600">
+      <img src="luxury 2.webp" height="600">
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+  <section class="flex-container">
+    <div class="image1-container">
+      <img src="b6ac69c4476114c61615735693a5eef6.jpg" alt="">
+    </div>
+    <div class="image2-container">
+      <img src="d3.jfif" alt="Placeholder Image">
+    </div>
+  </section>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h3 class="animate-charcter"> Pakistan,s No:1 LED Selling Store</h3>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="s-l640 (1).jpg" alt="Image 1">
+    </div>
+    <div class="gallery-item">
+      <img src="led (1).webp" alt="Image 2">
+    </div>
+    <div class="gallery-item">
+      <img src="lid (1).jpg" alt="Image 3">
+    </div>
+  </div>
+
+
+
+  <section class="grid-container">
+    <div class="text-container">
+      <h1>LED Light</h1>
+      <p> Welcome to our lightning category, where you'll find a wide range of LED lights to illuminate
+        your space.
+        Explore
+        our collection of LED ceiling lights, LED tube lights, LED Light Bulbs, LED downlights, LED Frame Panel,
+        and
+        many
+        other types perfect for enhancing the ambiance of any room Discover top-quality LED lights in Pakistan, with
+        competitive prices that fit your Brighten up your surroundings with our small LED lights, LEDs provide
+        unique design opportunities Some LED bulb solutions may physically resemble familiar light bulbs and better
+        match the appearance of traditional light bulbs.Quality LED light bulbs last longer, are more durable, and offer
+        comparable or better light quality than other types of lighting.</p>
+    </div>
+
+    <div class="image-container">
+      <img src="container.jpg" alt="Placeholder Image">
+    </div>
+  </section>
+
+
+  <div class="gallery2">
+    <div class="gallery2-item">
+      <img src="use.jpeg" alt="Image 1">
+    </div>
+    <div class="gallery2-item">
+      <img src="use2.jpeg" alt="Image 2">
+    </div>
+    <div class="gallery2-item">
+      <img src="use3.jpeg" alt="Image 3">
+    </div>
+  </div>
+
+
+  <section class="flip-section">
+    <h1>Our New Luxury LED Light Collection Coming Soon</h1>
+
+    <div class="flip-container">
+
+      <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+
+
+            <img src="a1.webp" alt="">
+          </div>
+          <div class="flip-box-back">
+            <img src="a3.webp" alt="">
+
+          </div>
+        </div>
+      </div>
+      <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="a4.jpg" alt="">
+          </div>
+          <div class="flip-box-back">
+            <img src="a5.jpg" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="a6.jfif" alt="">
+          </div>
+          <div class="flip-box-back">
+            <img src="a7.webp" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="flip-box">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <img src="a8.webp" alt="">
+          </div>
+          <div class="flip-box-back">
+            <img src="a9.webp" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <video width="1500" controls>
+    <source src="thankyou for watching.mp4" type="video/mp4">
+
+  </video>
+
+
+
+
+
+  <!DOCTYPE html>
+  <html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Responsive Footer </title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  </head>
+
+  <body>
+    <footer id="Services">
+
+      <div class="content">
+        <div class="left box">
+          <div class="upper">
+            <div class="topic">About us</div>
+            <iframe src="https://www.google.com/maps/embed" frameborder="00" width="300px" height="200px">
+            </iframe>
+          </div>
+
+        </div>
+        <div class="middle box">
+          <div class="topic">Our Services</div>
+          <div><a href="retail lightining design (1).html"> Retail Lighting Design</a></div>
+          <div><a href="lightining (1).html"> Lighting Installation and Maintenance</a></div>
+          <div><a href="light consultation and audits (1).html">Lighting Consultation and Audits</a></div>
+          <div><a href="custom lightining solution (1).html">Custom Lighting Solutions</a></div>
+          <div><a href="Efficiency (1).html"> Energy Efficiency Upgrades</a></div>
+
+        </div>
+        <div class="right box">
+          <div class="topic">Subscribe us</div>
+          <form action="#">
+            <input type="text" placeholder="Enter email address">
+            <input type="submit" name="" value="Send">
+            <div class="media-icons">
+              <a href="https://www.facebook.com/login/"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+
+              <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+              <a href="https://www.linkedin.com/login"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="bottom">
+        <p>Copyright © 2024 All rights reserved</p>
+      </div>
+    </footer>
+  </body>
+
+  </html>
+  <script>
+    $(document).ready(function () {
+      var slideindex = 0;
+      carousel();
+      function carousel() {
+        var slides = $('.carousel-slide img');
+        slides.hide();
+        slides.eq(slideindex).show();
+
+        slideindex++;
+        if (slideindex >= slides.length) {
+          slideindex = 0;
+        }
+        setTimeout(carousel, 2000);
+      }
+    })
+
+
+
+    // navbar
+    $(document).ready(function () {
+      $("#burger").click(function () {
+        $("#resp-nav").toggle();
+      })
+    })
+  </script>

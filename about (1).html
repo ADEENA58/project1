@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+.navbar {
+      background-color: rgb(249, 140, 194);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      overflow: hidden;
+      height: 100px;
+
+    }
+
+  
+    #burger {
+      width: 25px;
+      height: 3px;
+      margin: 5px;
+      display: none;
+    }
+    @media (max-width: 1139px) {
+      #burger {
+      display: block !important;
+    }
+    #nav-links {
+        display: none !important;
+      }
+    }
+    @media (max-width: 768px) {
+   
+
+      #burger {
+        display: block;
+      }
+
+      #nav-links {
+        display: block;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        /* background-color: ; */
+        padding: 10px;
+        border-radius: 5px;
+      }
+    }
+
+    .navbar-brand .navbar-text {
+      font-family: algerian;
+      letter-spacing: 5px;
+      font-size: 25px;
+      color: purple;
+
+    }
+
+#resp-nav{
+  display: none;
+}
+    .navbar a {
+      float: left;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 18px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+
+
+
+
+
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+
+    /* Dropdown button */
+    .dropdown .dropbtn {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+    }
+
+    Add a red background color to navbar links on hover */ .navbar a:hover,
+    .dropdown:hover .dropbtn {
+      background-color: purple;
+    }
+
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .navbar a:hover,
+    .dropdown:hover .dropbtn {
+      border-bottom: 5px solid purple;
+    }
+
+
+    /* The dropdown container */
+    .dropdown2 {
+      float: left;
+      overflow: hidden;
+    }
+
+    /* Dropdown button */
+    .dropdown2.dropbtn2 {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+
+      margin: 0;
+    }
+
+
+    .dropdown2-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+
+    .dropdown2-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+
+
+
+
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+
+header {
+    background-color: white;
+    color: rgb(0, 0, 0);
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+/* About Section */
+
+.about {
+    background: rgb(224, 251, 222);
+    background: linear-gradient(-45deg, #8c2f78 0%, #df98b8 50%);
+    padding: 100px 0 20px 0;
+    text-align: center;
+    
+}
+
+.about h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1rem;
+    color: #323030;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-info {
+    margin: 2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+.about-img {
+    width: 20rem;
+    height: 20rem;
+
+}
+
+.about-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+.about-info p {
+    font-size: 1.3rem;
+    margin: 0 2rem;
+    text-align: justify;
+}
+
+
+.team {
+    background: linear-gradient(-45deg, #8c2f78 0%, #df98b8 80%);
+    padding: 30px 0;
+    text-align: center;
+}
+
+.team h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.team-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 18rem;
+    height: 25rem;
+    margin-top: 10px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+}
+
+.card-img {
+    width: 18rem;
+    height: 12rem;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+
+
+.card-name {
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+.card-role {
+    font-size: 1rem;
+    color: #888;
+    margin: 5px 0;
+}
+
+.card-email {
+    font-size: 1rem;
+    color: #555;
+}
+
+
+
+@media (max-width: 768px) {
+  
+    .about h1 {
+        font-size: 2rem;
+    }
+
+    .about p {
+        font-size: 0.9rem;
+    }
+
+    .about-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-img {
+        width: 60%;
+        height: 60%;
+        margin-bottom: 1rem;
+    }
+
+    .about-info p {
+        margin: 1rem 2rem;
+    }
+
+    .about-info button {
+        margin: 1rem 2rem;
+        width: 10rem;
+    }
+
+    .team {
+        margin: 0 1rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+          href="style.css">
+    <title>About Us</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">
+          <span class="navbar-text text-success">Bright World</span>
+    
+        </a>
+        <div class="navbar" id="nav-links">
+          <a href="copy.html">Home</a>
+    
+          <div class="dropdown">
+            <button class="dropbtn"> Our Collection
+              <i class="fa fa-caret-down"></i>
+            </button>
+    
+            <div class="dropdown-content">
+              <a href="CEILING.HTML">CEILING LIGHTS</a>
+              <a href="LAMP.HTML">LED LAMP</a>
+              <a href="light bulbb.html">LIGHT BULB</a>
+              <a href="walldecore.html">DECORATION LIGHTS</a>
+            </div>
+    
+          </div>
+          <a href="about (1).html">About</a>
+          <a href="#Services">Our Services</a>
+    
+          <div class="dropdown">
+            <button class="dropbtn"> Brands
+              <i class="fa fa-caret-down"></i>
+            </button>
+    
+            <div class="dropdown-content">
+              <a href="phillips.html">phillips</a>
+              <a href="ultra.html">ultrasonic</a>
+    
+            </div>
+    
+          </div>
+          <a href="contact us form.html">Contact Us</a>
+          <a href="index.html">Feedback</a>
+          <a href="custtomer review.html">Review</a>
+    
+         
+      </nav>
+   
+
+    <section class="about">
+        <h1>About Us</h1>
+        <p style="font-weight: bold">
+          Bright World LED Store
+          </p>
+        <div class="about-info">
+            <div class="about-img">
+   <img src="White And Black Modern Abstract Beauty Logo.png" alt="image">
+            </div>
+            <div>
+            <p> At our LED selling light store, we believe that LED technology is the future of lighting. With a
+                market share of only 1.8% in 2012, LED lights have grown to hold more than 50% of the total lighting industry in
+                just 8 years. We expect this trend to continue, with LED lights projected to take around 90% of the market share
+                by 2030.
+          
+                Our store is dedicated to providing high-quality LED lighting products to our customers. We believe that LED
+                lights are the way to go, not just because of their energy efficiency and long lifespan, but also because they are
+                more environmentally friendly than traditional lighting products.
+          
+                We source our products from the best Chinese LED light manufacturers, who have a long history of producing
+                high-quality products. We believe that they offer the best combination of affordability, quality, and fast
+                delivery. Our products range from LED streetlights to LED lamps and bulbs, and we are committed to providing our
+                customers with the best possible products and service.
+          
+                By setting up a retail shop, we aim to provide our customers with a personalized experience, allowing them to see
+                and handle our products in person. This helps them make informed decisions about their purchases and builds trust
+                and loyalty with our brand. We are committed to staying up to date with the latest trends and developments in the
+                LED lighting industry, ensuring that our customers always get the best possible products
+            </p>
+               
+            </div>
+        </div>
+    </section>
+
+    <section class="team">
+        <h1>Meet Our Team</h1>
+        <div class="team-cards">
+          
+            <!-- Cards here -->
+            <!-- Card 1 -->
+          
+            <div class="card">
+                <div class="card-img">
+                    <img src="lotus-beautiful-flowers.avif" alt="User 1">
+                </div>
+                <div class="card-info">
+                    <h2 class="card-name">komal</h2>
+                    <p class="card-role">CEO and Founder</p>
+                    <p class="card-email">komal@example.com</p>
+                  
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+          
+            <div class="card">
+                <div class="card-img">
+                    <img src="beautiful-flowers-with-water-drops_23-2150705665.avif" alt="User 2">
+                </div>
+                <div class="card-info">
+                    <h2 class="card-name">adeena</h2>
+                    <p class="card-role">Co-Founder</p>
+                    <p class="card-email">adeena@example.com</p>
+                
+                </div>
+            </div>
+          
+            <!-- Card 3 -->
+          
+            <div class="card">
+                <div class="card-img">
+                    <img src="lincoln-red-rose-bush-types.avif" alt="User 3">
+                </div>
+                <div class="card-info">
+                    <h2 class="card-name">sana</h2>
+                    <p class="card-role">Co-Founder</p>
+                    <p class="card-email">sana@example.com</p>
+                  
+                </div>
+            </div>
+
+            
+            <div class="card">
+                <div class="card-img">
+                    <img src="flower.webp" alt="User 4" >
+                </div>
+                <div class="card-info">
+                    <h2 class="card-name">roshan</h2>
+                    <p class="card-role">Co-Founder</p>
+                    <p class="card-email">rooshan@example.com</p>
+                  
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>
+
+</body>
+</html>

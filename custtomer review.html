@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Review</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+
+    <style>
+         .navbar {
+      background-color: rgb(249, 140, 194);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      overflow: hidden;
+      height: 100px;
+
+    }
+
+  
+    #burger {
+      width: 25px;
+      height: 3px;
+      margin: 5px;
+      display: none;
+    }
+    @media (max-width: 1139px) {
+      #burger {
+      display: block !important;
+    }
+    #nav-links {
+        display: none !important;
+      }
+    }
+    @media (max-width: 768px) {
+   
+
+      #burger {
+        display: block;
+      }
+
+      #nav-links {
+        display: block;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        /* background-color: ; */
+        padding: 10px;
+        border-radius: 5px;
+      }
+    }
+
+    .navbar-brand .navbar-text {
+      font-family: algerian;
+      letter-spacing: 5px;
+      font-size: 25px;
+      color: purple;
+
+    }
+
+#resp-nav{
+  display: none;
+}
+    .navbar a {
+      float: left;
+      font-size: 16px;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+
+
+
+
+
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+
+    /* Dropdown button */
+    .dropdown .dropbtn {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+    }
+
+    Add a red background color to navbar links on hover */ .navbar a:hover,
+    .dropdown:hover .dropbtn {
+      background-color: purple;
+    }
+
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .navbar a:hover,
+    .dropdown:hover .dropbtn {
+      border-bottom: 5px solid purple;
+    }
+
+
+    /* The dropdown container */
+    .dropdown2 {
+      float: left;
+      overflow: hidden;
+    }
+
+    /* Dropdown button */
+    .dropdown2.dropbtn2 {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+
+      margin: 0;
+    }
+
+
+    .dropdown2-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+
+    .dropdown2-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+
+
+
+        body {
+            background-color: rgb(239, 198, 225);
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: poppins;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #comments {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .comments-heading {
+            letter-spacing: 1px;
+            margin: 30px 0px;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .comments-heading span {
+            font-size: 1.3rem;
+            color: #252525;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+        }
+
+        .comments-box-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .comments-box {
+            width: 600px;
+            box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 15px;
+            cursor: pointer;
+        }
+
+        .profile-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+        }
+
+        .name-user {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .name-user strong {
+            color: #3d3d3d;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .name-user span {
+            color: #979797;
+            font-size: 0.8rem;
+        }
+
+        .reviews {
+            color: #f9d71c;
+        }
+
+        .box-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .client-comment p {
+            font-size: 0.9rem;
+            color: #4b4b4b;
+        }
+
+        .comments-box:hover {
+            transform: translateY(-10px);
+            transition: all ease 0.3s;
+        }
+
+        @media(max-width:1060px) {
+            .comments-box {
+                width: 45%;
+                padding: 10px;
+            }
+        }
+
+        @media(max-width:790px) {
+            .comments-box {
+                width: 100%;
+            }
+
+            .comments-heading h1 {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media(max-width:340px) {
+            .box-top {
+                flex-wrap: wrap;
+                margin-bottom: 10px;
+            }
+
+            .reviews {
+                margin-top: 10px;
+            }
+        }
+
+        ::selection {
+            color: #ffffff;
+            background-color: #252525;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 40px;
+            color: purple;
+        }
+
+
+        #comments2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .comments2-heading {
+            letter-spacing: 1px;
+            margin: 30px 0px;
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .comments2-heading span {
+            font-size: 1.3rem;
+            color: #252525;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+        }
+
+        .comments2-box-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .comments2-box {
+            width: 600px;
+            box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 15px;
+            cursor: pointer;
+        }
+
+        .profile-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+        }
+
+        .name-user {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .name-user strong {
+            color: #3d3d3d;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .name-user span {
+            color: #979797;
+            font-size: 0.8rem;
+        }
+
+        .reviews {
+            color: #f9d71c;
+        }
+
+        .box-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .client-comment p {
+            font-size: 0.9rem;
+            color: #4b4b4b;
+        }
+
+        .comments2-box:hover {
+            transform: translateY(-10px);
+            transition: all ease 0.3s;
+        }
+
+        @media(max-width:1060px) {
+            .comments-box {
+                width: 45%;
+                padding: 10px;
+            }
+        }
+
+        @media(max-width:790px) {
+            .comments-box {
+                width: 100%;
+            }
+
+            .comments-heading h1 {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media(max-width:340px) {
+            .box-top {
+                flex-wrap: wrap;
+                margin-bottom: 10px;
+            }
+
+            .reviews {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">
+          <span class="navbar-text text-success">Bright World</span>
+    
+        </a>
+        <div class="navbar" id="nav-links">
+          <a href="copy.html">Home</a>
+    
+          <div class="dropdown">
+            <button class="dropbtn"> Our Collection
+              <i class="fa fa-caret-down"></i>
+            </button>
+    
+            <div class="dropdown-content">
+              <a href="CEILING.HTML">CEILING LIGHTS</a>
+              <a href="LAMP.HTML">LED LAMP</a>
+              <a href="light bulbb.html">LIGHT BULB</a>
+              <a href="walldecore.html">DECORATION LIGHTS</a>
+            </div>
+    
+          </div>
+          <a href="about (1).html">About</a>
+          <a href="#Services">Our Services</a>
+    
+          <div class="dropdown">
+            <button class="dropbtn"> Brands
+              <i class="fa fa-caret-down"></i>
+            </button>
+    
+            <div class="dropdown-content">
+              <a href="phillips.html">phillips</a>
+              <a href="ultra.html">ultrasonic</a>
+    
+            </div>
+    
+          </div>
+          <a href="contact us form.html">Contact Us</a>
+          <a href="index.html">Feedback</a>
+          <a href="custtomer review.html">Review</a>
+    
+          
+      </nav>
+    <section id="Comments">
+        <div class="Comments-heading">
+            <h1>Our Happy Clients</h1>
+        </div>
+        <div class="comments-box-container">
+            <div class="comments-box">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="g1.jfif" />
+                        </div>
+                        <div class="name-user">
+                            <strong>Ayesha</strong>
+                            <span>@ayeshatariq</span>
+                        </div>
+                    </div>
+                    <div class="reviews">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+                <div class="client-comment">
+                    <p>"I was amazed by the wide range of LED lights available. The quality of the products is
+                        top-notch, and the customer service team was incredibly helpful in guiding me to the best
+                        options for my needs."</p>
+                </div>
+            </div>
+            <div class="comments-box">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="b1.jfif" />
+                        </div>
+                        <div class="name-user">
+                            <strong>kumail</strong>
+                            <span>@kumailkazmi</span>
+                        </div>
+                    </div>
+                    <div class="reviews">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="client-comment">
+                    <p>"I found the prices to be very competitive, especially for the high-quality LED lights they
+                        offer. I feel like I got a great deal on energy-efficient lighting that will last for years."
+                    </p>
+                </div>
+            </div>
+            <div class="comments-box">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="b2.jfif" />
+                        </div>
+                        <div class="name-user">
+                            <strong>Zahid</strong>
+                            <span>@Zahid12gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="reviews">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+                <div class="client-comment">
+                    <p>"I love the stylish LED fixtures I purchased. They not only look great but also help me save on
+                        my electricity bill. The store had a variety of modern and energy-efficient options to choose
+                        from."</p>
+                </div>
+            </div>
+            <div class="comments-box">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="g2.jfif" />
+                        </div>
+                        <div class="name-user">
+                            <strong>Afifa</strong>
+                            <span>Afifa@ali</span>
+                        </div>
+                    </div>
+                    <div class="reviews">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+                <div class="client-comment">
+                    <p>"The store provided excellent advice on how to install my new LED lights. The tips and tricks
+                        made the process straightforward, and the results are fantastic. Thank you for the extra
+                        support!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="comments2">
+
+
+        <div class="Comments2-heading">
+
+        </div>
+        <div class="comments2-box-container">
+            <div class="comments2-box">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="b3.jfif" />
+                        </div>
+                        <div class="name-user">
+                            <strong>Fardeen</strong>
+                            <span>@fardeenwarsi</span>
+                        </div>
+                    </div>
+                    <div class="reviews">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+                <div class="client-comment">
+                    <p>"I’ve outfitted every room in my house with lights from this store, and they’ve transformed the
+                        atmosphere in each space. The quality and design are just perfect for my home."</p>
+                </div>
+            </div>
+            <div class="comments2-box">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="g5.jpg" />
+                        </div>
+                        <div class="name-user">
+                            <strong>Areen</strong>
+                            <span>@areenazeem</span>
+                        </div>
+                    </div>
+                    <div class="reviews">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="client-comment">
+                    <p>"It’s great to see a store that prioritizes sustainability. The LED lights are not only
+                        energy-efficient but also environmentally friendly. I'm happy to support a business that aligns
+                        with my values."
+                    </p>
+                </div>
+            </div>
+            <div class="comments2-box">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="g4.jpg" />
+                        </div>
+                        <div class="name-user">
+                            <strong>Aliza</strong>
+                            <span>@alizashakil</span>
+                        </div>
+                    </div>
+                    <div class="reviews">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+                <div class="client-comment">
+                    <p>"I appreciate the focus on eco-friendly and innovative lighting solutions. It’s great to support
+                        a store that offers products that are not only stylish but also good for the environment."</p>
+                </div>
+            </div>
+            <div class="comments2-box">
+                <div class="box-top">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="g3.jfif" />
+                        </div>
+                        <div class="name-user">
+                            <strong>Hamna</strong>
+                            <span>hamna@sikandar</span>
+                        </div>
+                    </div>
+                    <div class="reviews">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+                <div class="client-comment">
+                    <p>"I appreciate the focus on eco-friendly and innovative lighting solutions. It’s great to support
+                        a store that offers products that are not only stylish but also good for the environment."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src='https://kit.fontawesome.com/c8e4d183c2.js'></script>
+</body>
+
+</html>

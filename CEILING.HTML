@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            body{
+        background-color: rgb(239, 198, 225);
+      }
+
+
+        .navbar {
+      background-color: rgb(249, 140, 194);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      overflow: hidden;
+      height: 100px;
+
+    }
+
+  
+    #burger {
+      width: 25px;
+      height: 3px;
+      margin: 5px;
+      display: none;
+    }
+    @media (max-width: 1139px) {
+      #burger {
+      display: block !important;
+    }
+    #nav-links {
+        display: none !important;
+      }
+    }
+    @media (max-width: 768px) {
+   
+
+      #burger {
+        display: block;
+      }
+
+      #nav-links {
+        display: block;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        /* background-color: ; */
+        padding: 10px;
+        border-radius: 5px;
+      }
+    }
+
+    .navbar-brand .navbar-text {
+      font-family: algerian;
+      letter-spacing: 5px;
+      font-size: 25px;
+      color: purple;
+
+    }
+
+#resp-nav{
+  display: none;
+}
+    .navbar a {
+      float: left;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 18px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+
+
+
+
+
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+
+    /* Dropdown button */
+    .dropdown .dropbtn {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+    }
+
+    Add a red background color to navbar links on hover */ .navbar a:hover,
+    .dropdown:hover .dropbtn {
+      background-color: purple;
+    }
+
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .navbar a:hover,
+    .dropdown:hover .dropbtn {
+      border-bottom: 5px solid purple;
+    }
+
+
+    /* The dropdown container */
+    .dropdown2 {
+      float: left;
+      overflow: hidden;
+    }
+
+    /* Dropdown button */
+    .dropdown2.dropbtn2 {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+
+      margin: 0;
+    }
+
+
+    .dropdown2-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+
+    .dropdown2-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+
+
+
+        nav {
+            display: flex;
+            background-color: rgb(216, 103, 216);
+            justify-content: center;
+        }
+      nav ul li{
+        display:inline-block;
+        margin: 20px;
+        
+
+      }nav ul li a{
+        text-decoration: none;
+        color: #000;
+        font-size: 23px;
+      }
+              /* phillips */
+              .contentPHILLIPS {
+            height: 100vh;
+            width: 100%;
+            background-image: url(phillips\ back\ \(2\).jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: 3s;
+
+            animation-name: animated;
+            animation-direction: alternate-reverse;
+            animation-play-state: running;
+            animation-timing-function: ease-in-out;
+            animation-duration: 5s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes animated {
+            0% {
+                background-image: url(phillips1\ \(2\).jpg);
+            }
+
+            20% {
+                background-image: url(phillips2\ \(2\).jpg);
+            }
+
+            40% {
+                background-image: url(phillips3\ \(2\).jpg);
+            }
+
+            60% {
+                background-image: url(phillips5\ \(2\).jpg);
+            }
+
+            80% {
+                background-image: url(phillips6.jpg);
+            }
+
+            100% {
+                background-image: url(phillips7.jpg);
+            }
+
+        }
+      
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">
+          <span class="navbar-text text-success">Bright World</span>
+    
+        </a>
+        <div class="navbar" id="nav-links">
+          <a href="copy.html">Home</a>
+    
+          <div class="dropdown">
+            <button class="dropbtn"> Our Collection
+              <i class="fa fa-caret-down"></i>
+            </button>
+    
+            <div class="dropdown-content">
+              <a href="CEILING.HTML">CEILING LIGHTS</a>
+              <a href="LAMP.HTML">LED LAMP</a>
+              <a href="light bulbb.html">LIGHT BULB</a>
+              <a href="walldecore.html">DECORATION LIGHTS</a>
+            </div>
+    
+          </div>
+          <a href="about (1).html">About</a>
+          <a href="#Services">Our Services</a>
+    
+          <div class="dropdown">
+            <button class="dropbtn"> Brands
+              <i class="fa fa-caret-down"></i>
+            </button>
+    
+            <div class="dropdown-content">
+              <a href="phillips.html">phillips</a>
+              <a href="ultra.html">ultrasonic</a>
+    
+            </div>
+    
+          </div>
+          <a href="contact us form.html">Contact Us</a>
+          <a href="index.html">Feedback</a>
+          <a href="custtomer review.html">Review</a>
+    
+         
+      </nav>
+   
+
+    <div>
+    <NAV>
+        <UL>
+        <LI><a href="livingcei.html">FOR LIVING ROOM </a></LI>
+        <LI><a href="bedcei.html">FOR BED ROOM ROOM </a></LI>
+        </UL>
+    </NAV>
+    </div>
+    <div class="contentPHILLIPS">
+
+    </div>
+</body>
+</htm

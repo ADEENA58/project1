@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:rgb(239, 198, 225);
+        }
+        .card-container {
+            width: 300px;
+            height: 100px;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(91, 79, 79, 0.2);
+            overflow: hidden;
+            margin: 200px;
+            padding: 350px;
+            /* margin-right: 100px; */
+            margin-top: 10px;
+            background-color: rgb(226, 115, 171);
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            
+        }
+
+        .card .front-content {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
+        }
+
+        .card .front-content p {
+            font-size: 32px;
+            font-weight: 700;
+            opacity: 1;
+            background: linear-gradient(-45deg, #140e11 0%, #000000 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
+        }
+     
+        .card .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 10px;
+            background: linear-gradient(-45deg, #8c2f78 0%, #df98b8 100%);
+            color: #070707;
+            padding: 20px;
+            line-height: 1.5;
+            border-radius: 5px;
+            pointer-events: none;
+            transform: translateX(-96%);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+        @media (max-width: 768px) {
+  .card-container {
+    width: 350px;
+    padding: 90px;
+    margin: 15px;
+    height: 400px;
+    font-size: 12px;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .front-content, .content {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .front-content p, .content p {
+    font-size: 10px; 
+    width: 300px;
+    height: 350px;/* Adjust text size for smaller screens */
+  }
+}
+
+
+
+
+
+        .card .content .heading {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .card:hover .content {
+            transform: translateY(0);
+        }
+
+        .card:hover .front-content {
+            transform: translateX(-30%);
+        }
+
+        .card:hover .front-content p {
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card-container">
+        <div class="card">
+            <div class="front-content">
+                <p>Our Services</p>
+            </div>
+            <div class="content">
+                <p class="heading">Custom Lighting Solutions</p>
+                <p>
+                    Providing custom lighting solutions can help your customers  <br>
+                    create unique and attention-grabbing
+                    displays. <br>
+                    This can include designing and installing custom LED lighting fixtures,<br>
+                     as well as
+                    creating bespoke lighting solutions for specific products or areas of the store.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+      background-color: rgb(239, 198, 225);
+      font-family: open sans;
+    }
+
+    header {
+      background-color: rgb(168, 33, 157);
+      color: black;
+      padding: 30px;
+      text-align: center;
+      text-shadow: 10px;
+
+    }
+
+    .navbar {
+      background-color: rgb(249, 140, 194);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      overflow: hidden;
+height: 100px;
+
+    }
+
+
+   
+  
+    .navbar-brand .navbar-text{
+font-family: algerian;
+letter-spacing: 5px;
+      font-size: 25px;
+      color: purple;
+      
+    }
+
+   
+    .navbar a {
+      float: left;
+      font-size: 20px;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-family: Algerian;
+      
+    }
+
+
+
+
+
+
+    .dropdown {
+      float: left;
+      overflow: hidden;
+      font-family: Arial;
+      font-family: algerian;
+      
+
+    }
+
+    /* Dropdown button */
+    .dropdown .dropbtn {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+      margin: 0;
+    }
+
+    Add a red background color to navbar links on hover */
+    .navbar a:hover,
+    .dropdown:hover .dropbtn {
+      background-color: purple;
+    } 
+
+ 
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .navbar a:hover,
+    .dropdown:hover .dropbtn
+    {
+      border-bottom: 5px solid purple ;}
+
+
+    /* The dropdown container */
+    .dropdown2 {
+      float: left;
+      overflow: hidden;
+    }
+
+    /* Dropdown button */
+    .dropdown2.dropbtn2 {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit;
+     
+      margin: 0;
+    }
+
+   
+    .dropdown2-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+   
+    .dropdown2-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+
+
+
+
+
+
+    .carousel-slide {
+      display: flex;
+      justify-content: center;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 700px;
+    }
+
+    /* footer */
+    span {
+
+      font-size: larger;
+      font-weight: bold;
+      color: purple;
+      text-align: center;
+      display: block;
+      font-size: 80px;
+      font-family: 'Times New Roman', Times, serif;
+      margin: 50px;
+      padding: 50px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 340px);
+
+      grid-gap: 100px;
+      justify-content: center;
+      align-items: center;
+      margin: 40px;
+      padding: 40px;
+    }
+
+    .container {
+      height: 100%;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 240px);
+      grid-template-rows: repeat(1, 240px);
+      grid-gap: 80px;
+    }
+
+    .gallery img {
+      width: 300px;
+      height: 300px;
+      border-radius: 20px;
+      border-style: solid;
+      border-color: hotpink;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.1);
+
+    }
+
+
+    
+    .cont {
+      display: flex;
+      justify-content: space-around;
+      margin: 1%;
+     
+    }
+
+    .abc {
+      width: 45%;
+      height: fit-content;
+      font-size: large;
+      
+      line-height: 40px;
+      margin: 20px;
+     
+    }
+
+    .abc img {
+      width: 100%;
+      height: fit-content;
+      object-fit: cover;
+
+    }
+
+.abc h1{
+  text-align: center;
+  margin: 20px;
+}
+
+
+
+
+
+    .gallery2 {
+      display: grid;
+      grid-template-columns: repeat(4, 340px);
+
+      grid-gap: 100px;
+      justify-content: center;
+      align-items: center;
+      margin: 40px;
+      padding: 40px;
+    }
+
+    .container {
+      height: 100%;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .gallery2 {
+      display: grid;
+      grid-template-columns: repeat(3, 240px);
+      grid-template-rows: repeat(1, 240px);
+      grid-gap: 80px;
+    }
+
+    .gallery2 img {
+      width: 300px;
+      height: 300px;
+      border-radius: 20px;
+      border-style: solid;
+      border-color: hotpink;
+    }
+
+    .gallery2 img:hover {
+      transform: scale(1.1);
+
+    }
+
+
+
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      text-decoration: none;
+    }
+
+    footer {
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      background: rgb(168, 33, 157);
+      position: relative;
+     
+    }
+
+    footer .content {
+      max-width: 1350px;
+      margin: auto;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    footer .content p,
+    a {
+      color: #0b0b0b;
+    }
+
+    footer .content .box {
+      width: 33%;
+      transition: all 0.4s ease;
+    }
+
+    footer .content .topic {
+      font-size: 22px;
+      font-weight: 600;
+      color: black;
+      margin-bottom: 16px;
+
+    }
+
+    footer .content p {
+      text-align: justify;
+    }
+
+    footer .content .lower .topic {
+      margin: 24px 0 5px 0;
+    }
+
+    footer .content .lower i {
+      padding-right: 16px;
+    }
+
+    footer .content .middle {
+      padding-left: 80px;
+    }
+
+    footer .content .middle a {
+      line-height: 32px;
+    }
+
+    footer .content .right input[type="text"] {
+      height: 45px;
+      width: 100%;
+      outline: none;
+      color: #d9d9d9;
+      background: #000;
+      border-radius: 5px;
+      padding-left: 10px;
+      font-size: 17px;
+      border: 2px solid #222222;
+    }
+
+    footer .content .right input[type="submit"] {
+      height: 42px;
+      width: 100%;
+      font-size: 18px;
+      color: #d9d9d9;
+      background: #eb2f06;
+      outline: none;
+      border-radius: 5px;
+      letter-spacing: 1px;
+      cursor: pointer;
+      margin-top: 12px;
+      border: 2px solid #eb2f06;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .content .right input[type="submit"]:hover {
+      background: none;
+      color: #eb2f06;
+    }
+
+    footer .content .media-icons a {
+      font-size: 16px;
+      height: 45px;
+      width: 45px;
+      display: inline-block;
+      text-align: center;
+      line-height: 43px;
+      border-radius: 5px;
+      border: 2px solid #222222;
+      margin: 30px 5px 0 0;
+      transition: all 0.3s ease;
+    }
+
+    .content .media-icons a:hover {
+      border-color: #91315e;
+    }
+
+    footer .bottom {
+      width: 100%;
+      text-align: right;
+      color: #0a0a0a;
+      padding: 0 40px 5px 0;
+    }
+
+    footer .bottom a {
+      color: #eb2f06;
+    }
+
+    footer a {
+      transition: all 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #eb2f06;
+    }
+
+    @media (max-width:1100px) {
+      footer .content .middle {
+        padding-left: 50px;
+      }
+    }
+
+    @media (max-width:950px) {
+      footer .content .box {
+        width: 50%;
+      }
+
+      .content .right {
+        margin-top: 40px;
+      }
+    }
+
+    @media (max-width:560px) {
+      footer {
+        position: relative;
+      }
+
+      footer .content .box {
+        width: 100%;
+        margin-top: 30px;
+      }
+
+      footer .content .middle {
+        padding-left: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header> Our luxury LED lamps available </header>
+  <nav class="navbar">
+    <a class="navbar-brand" href="#">
+      <span class="navbar-text text-success">Bright World</span>
+     
+    </a>
+    <div class="navbar">
+      <a href="#home">Home</a>
+
+      <div class="dropdown">
+        <button class="dropbtn"> Our Collection
+          <i class="fa fa-caret-down"></i>
+        </button>
+
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+
+      </div>
+      <a href="about.html">About</a>
+      <a href="#Services">Our Services</a>
+      
+      <div class="dropdown">
+        <button class="dropbtn"> Brands
+          <i class="fa fa-caret-down"></i>
+        </button>
+
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+
+      </div>
+      <a href="contact us form.html">Contact Us</a>
+      <a href="feedbackform2.html">Feedback</a>
+  </nav>
+  </nav>
+  <div class="carousel-container">
+    <div class="carousel-slide">
+      <img src="slidder 2.png" height="600">
+      <img src="slidder 6.png" height="600">
+      <img src="slidder 4.png" height="600">
+      <img src="luxury.jpg" height="600">
+      <img src="luxury 3.webp" height="600">
+      <img src="luxury 2.webp" height="600">
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+
+
+  <span>Pakistan's No:1 LED Selling Store</span>
+
+  <div class="container">
+
+    <div class="gallery">
+      <div><img src="s-l640.jpg" alt="dt2"></div>
+      <div> <img src="led.webp" alt="girl-aesthetic-digital-art-eofykhpsgkz4ilidt2"></div>
+      <div><img src="lid.jpg" alt="r">
+        <picture>
+
+
+      </div>
+    </div>
+
+ 
+      
+    <div class="cont">
+      <div class="abc">
+        <h1>LED Light</h1>
+        <p> Welcome to our lightning category, where you'll find a wide range of LED lights to illuminate
+          your space.
+          Explore
+          our collection of LED ceiling lights, LED tube lights, LED Light Bulbs, LED downlights, LED Frame Panel,
+          and
+          many
+          other types perfect for enhancing the ambiance of any room Discover top-quality LED lights in Pakistan, with
+          competitive prices that fit your Brighten up your surroundings with our small LED lights, LEDs provide
+          unique design opportunities Some LED bulb solutions may physically resemble familiar light bulbs and better
+          match the appearance of traditional light bulbs.</p>
+      </div>
+      <div class="abc">
+        <img src="imp.jfif" alt="">
+      </div>
+    </div>
+
+
+
+
+    <div class="container">
+
+      <div class="gallery2">
+        <div><img src="images (3).jfif" alt="img1"></div>
+        <div> <img src="iht.jpeg" alt="img2"></div>
+        <div><img src="cg.jpg" alt="img3">
+          <picture>
+
+
+        </div>
+      </div>
+
+
+
+
+
+
+      <video width="1500" height="900" controls>
+        <source src="thankyou for watching.mp4" type="video/mp4">
+
+      </video>
+
+
+
+
+
+
+      <!DOCTYPE html>
+
+      <html lang="en" dir="ltr">
+
+      <head>
+        <meta charset="UTF-8">
+        <title> Responsive Footer </title>
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+      </head>
+
+      <body>
+        <footer id="Services">
+
+          <div class="content">
+            <div class="left box">
+              <div class="upper">
+                <div class="topic">About us</div>
+                <iframe src="https://www.google.com/maps/embed" frameborder="00" width="300px" height="200px"> 
+                   </iframe>
+              </div>
+
+            </div>
+            <div class="middle box">
+              <div class="topic">Our Services</div>
+              <div><a href="retail lightining design.html"> Retail Lighting Design</a></div>
+              <div><a href="lightining.html"> Lighting Installation and Maintenance</a></div>
+              <div><a href="light consultation and audits.html">Lighting Consultation and Audits</a></div>
+              <div><a href="custom lightining solution.html">Custom Lighting Solutions</a></div>
+              <div><a href="Efficiency.html"> Energy Efficiency Upgrades</a></div>
+
+            </div>
+            <div class="right box">
+              <div class="topic">Subscribe us</div>
+              <form action="#">
+                <input type="text" placeholder="Enter email address">
+                <input type="submit" name="" value="Send">
+                <div class="media-icons">
+                  <a href="https://www.facebook.com/login/"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+
+                  <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                  <a href="https://www.linkedin.com/login"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="bottom">
+            <p>Copyright © 2024 All rights reserved</p>
+          </div>
+        </footer>
+      </body>
+
+      </html>
+      <script>
+        $(document).ready(function () {
+          var slideindex = 0;
+          carousel();
+          function carousel() {
+            var slides = $('.carousel-slide img');
+            slides.hide();
+            slides.eq(slideindex).show();
+
+            slideindex++;
+            if (slideindex >= slides.length) {
+              slideindex = 0;
+            }
+            setTimeout(carousel, 2000);
+          }
+        })
+      </script>
